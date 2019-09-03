@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @Output() keywordSearch = new EventEmitter();
+
   counter = 0;
   keyword = 'test';
   isHighlight = false;
@@ -17,6 +20,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   search(event: MouseEvent) {
+
+    this.keywordSearch.emit(this.keyword);
+
     console.log(event);
     if (event.ctrlKey) {
       this.counter = this.counter + 1;

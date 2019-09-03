@@ -64,4 +64,10 @@ export class AppComponent {
     }
   ];
 
+  originalList = this.list;
+
+  search(keyword: string) {
+    this.list = this.originalList.filter(item => item.title.indexOf(keyword) !== -1);
+    console.log(this.list);
+  }
 }
