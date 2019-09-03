@@ -6,6 +6,30 @@
   </ul>
 </div>
 
+<ng-container *ngFor="let item of list; let index = index; let first = first; let last = last; let odd = odd; let even = even">
+  <div class="post-preview" *ngIf="!first">
+
+    <div class="post-meta">
+      <a href="profile.html">
+        <img src="http://i.imgur.com/Qr71crq.jpg" />
+      </a>
+      <div class="info">
+        <a href="profile.html" class="author">Eric Simons</a>
+        <span class="date">January 20th</span>
+      </div>
+      <button class="btn btn-outline-primary btn-sm pull-xs-right">
+        <i class="ion-heart"></i> 29
+      </button>
+    </div>
+    <a href="post.html" class="preview-link">
+      <h1 [style.color]="first ? 'red': 'black'">{{ item.title }}</h1>
+      <p>{{ item.description }}</p>
+      <span>Read more...</span>
+    </a>
+
+  </div>
+</ng-container>
+
 <div class="post-preview">
   <div class="post-meta">
     <a href="profile.html">
