@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  counter = 0;
+  keyword = 'test';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  search(event: MouseEvent) {
+    console.log(event);
+    if (event.ctrlKey) {
+      this.counter = this.counter + 1;
+    }
+    console.log('test');
   }
-
 }
