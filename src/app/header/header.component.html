@@ -3,14 +3,36 @@
     <!-- <a class="navbar-brand" href="index.html" [ngClass]="{highlight: isHighlight}">conduit</a> -->
     <!-- <a class="navbar-brand" href="index.html" [class.highlight]="isHighlight">conduit</a> -->
     <!-- <a class="navbar-brand" href="index.html" [class.highlight]="isHighlight" [ngStyle]="{'font-size.px': fontSize}">conduit</a> -->
-    <a class="navbar-brand" href="index.html" [class.highlight]="isHighlight" [style.font-size.px]="fontSize">conduit</a>
-    <input class="form-control form-control-sm search-input" type="text"
-      placeholder="Keyword"
-      [(ngModel)]="keyword"
-    >
+    <a class="navbar-brand" href="index.html" [class.highlight]="isHighlight"
+      [style.font-size.px]="fontSize">conduit</a>
+    <input class="form-control form-control-sm search-input" type="text" placeholder="Keyword" [(ngModel)]="keyword">
     <button class="btn btn-sm btn-primary" (click)="search($event)">
       <i class="ion-search"></i>
     </button>
+
+    <!-- if-else 方法1: 兩個 if -->
+    <!-- <span class="highlight">
+      <span *ngIf="!keyword">請輸入查詢條件</span>
+      <span *ngIf="keyword">請按查詢按鈕</span>
+    </span> -->
+
+    <!-- if-else 方法2: 兩個 if else -->
+    <!-- <span class="highlight">
+      <span *ngIf="!keyword; else notify">請輸入查詢條件</span>
+    </span> -->
+
+    <!-- if-else 方法3: 兩個 if then else -->
+    <span class="highlight">
+      <span *ngIf="!keyword; then fail; else notify"></span>
+    </span>
+
+    <ng-template #fail>
+      <span>請輸入查詢條件</span>
+    </ng-template>
+
+    <ng-template #notify>
+      <span>請按查詢按鈕</span>
+    </ng-template>
 
     {{ keyword }}
   </div>
