@@ -9,9 +9,13 @@
     - [Win] ctrl + k, s
     - [Mac] cmd + option + s
 
-- 切換關聯檔案
-    - [Win] alt + o
-    - [Mac] option + shift + o
+- 切換元件關聯檔案：
+    - [Win] alt + u / i / o / p
+    - [Mac] option + shift + o / i / o / p
+    - u: .ts
+    - i: .css / scss
+    - o: .html
+    - p: .spec.ts
 
 - 快速開啟檔案
     - [Win] ctrl + p
