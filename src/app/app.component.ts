@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleService } from './article.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ArticleService } from './article.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'FUBON';
   test = 'test';
   subtitle = 'A place to share your <u>knowledge</u>.';
@@ -78,6 +78,10 @@ export class AppComponent {
   keyword = '';
 
   constructor(private articleService: ArticleService) {
+
+  }
+
+  ngOnInit() {
     this.articleService.getArticles().subscribe((article: any) => {
       console.log(article.articles);
 
