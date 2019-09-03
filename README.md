@@ -51,6 +51,10 @@
     - [Win] ctrl + /
     - [Mac] cmd + /
 
+- 將目前的檔案用一個新視窗開啟
+    - [Win] ctrl + k, o
+    - [Mac] cmd + k, o
+
 ## Emmet
 
 https://docs.emmet.io/abbreviations/syntax/
